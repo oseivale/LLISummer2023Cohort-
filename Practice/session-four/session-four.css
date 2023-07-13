@@ -8,3 +8,26 @@
     height: 200px;
 }
 
+#navbar {
+    background-color: #431EA3;
+    color: #ffffff;
+    height: 175px;
+}
+
+.link-item a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.link-item {
+    list-style-type: none;
+    margin: 20px;
+    font-size: 1.5rem;
+  
+}
+
+.link-wrapper {
+    display: flex;
+}
+
+
