@@ -30,4 +30,18 @@
     display: flex;
 }
 
+#my-btn {
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    border: 2px double #e32e2e;
+    color: #ffffff;
+    border-radius: 30px;
+    background-color: #4D20C2;
+}
+
+#my-btn:hover {
+    background-color: #ffffff;
+    color: #4D20C2;
+}
+
 
