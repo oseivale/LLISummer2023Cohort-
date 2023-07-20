@@ -66,10 +66,15 @@ p{
 }
 
 .card .back {
+    background-image: url("https://img.freepik.com/premium-vector/sunshine-cartoon-character-smiling-sun-sky_683773-165.jpg?w=2000");
     background-position: center;
     background-size: cover;
     backface-visibility: hidden;
 }
+
+
+
+
 
 
 
