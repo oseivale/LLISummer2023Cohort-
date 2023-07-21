@@ -6,6 +6,27 @@ let score = 0;
 
 document.querySelector(".score").textContent = score;
 
+fetch("https://raw.githubusercontent.com/oseivale/memory-card-game-demo/master/data/cards.json")
+.then((response) => response.json())
+.then((data) => {
+    cards = [...data, ...data]
+    shuffleCards();
+    generateCards();
+})
+
+function shuffleCards(){
+    let currentIndex = cards.length, randomIndex;
+
+    while(currentIndex !== 0){
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        temporaryValue = cards[currentIndex];
+        cards[currentIndex] = cards[randomIndex];
+        cards[randomIndex] = temporaryValue;
+    }
+}
+
 function generateCards(){
     for(let card of cards){
         const cardElement = document.createElement("div");
@@ -53,3 +74,30 @@ function disableCards(){
 
     resetBoard()
 }
+
+function unflipCards(){
+    setTimeout(() => {
+        firstCard.classList.remove("flipped");
+        secondCard.classList.remove("flipped");
+        resetBoard()
+    }, 1000)
+}
+
+function resetBoard(){
+    firstCard = null;
+    secondCard = null;
+    lockBoard = null;
+}
+
+function restart(){
+    resetBoard();
+    shuffleCards();
+    score = 0;
+    document.querySelector(".score").textContent = score;
+    gridContainer.innerHTML = "";
+    generateCards();
+}
+
+
+
+
